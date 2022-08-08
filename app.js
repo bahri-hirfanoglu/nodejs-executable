@@ -1,5 +1,6 @@
 const express = require("express"),
 path = require('path'),
+ejs = require('ejs'),
 app = express();
 
 app.set('views', path.join(__dirname, '/resource/views'));
@@ -11,7 +12,6 @@ app.get('/', function(req, res) {
 });
 
 app.get('/assets/*', function(req, res) {
-    console.log(req.path)
     res.sendFile(__dirname + "/resource/public/" + req.path)
 });
 
